@@ -10,9 +10,9 @@ public class GameController {
 		// TODO Auto-generated method stub
 		while(!board.isFull()||!board.isWinner()) {
 		board.displayboard();
-		System.out.println("Choose Row");
+		System.out.println("Choose Row from 1-15");
 		int row=scnr.nextInt();
-		System.out.println("Choose Column");
+		System.out.println("Choose Column from 1-15");
 		int col=scnr.nextInt();
 		board.placeStone(row,col,"player");
 		Random rand=new Random();
