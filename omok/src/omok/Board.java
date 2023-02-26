@@ -26,4 +26,22 @@ public void displayboard() {
 		System.out.println();
 	}
 }
+public boolean isFull() {
+	// TODO Auto-generated method stub
+	return false;
+}
+public boolean isWinner() {
+	// TODO Auto-generated method stub
+	return false;
+}
+public void placeStone(int row, int col,String user) {
+	// TODO Auto-generated method stub
+	char symbol=' ';
+	if(user.equals("player")) {
+		symbol='X';
+	}else if(user.equals("cpu")){
+		symbol='0';
+	}
+	board[row][col]=symbol;
+}
 }
