@@ -19,6 +19,7 @@ public class Board {
 			{'.','.','.','.','.','.','.','.','.','.','.','.','.','.','.'}};
 public void displayboard() {
 	int num=1;
+	//Display will show the rows and columns while each place on board will be '.' in a char array
 	System.out.println("X  1  2  3  4  5  6  7  8  9 10  11 12 13 14 15");
 	System.out.println("y---------------------------------------------------");
 	for(char[] row:board) {
@@ -33,7 +34,7 @@ public void displayboard() {
 		System.out.println();
 	}
 }
-
+//Checks if the board is full might use
 public boolean isFull() {
 	// TODO Auto-generated method stub
 	for(int i=0;i<board.length;i++) {
@@ -45,6 +46,7 @@ public boolean isFull() {
 	}
 	return true;
 }
+//Checks for the winner of the game will take either players of the game
 public boolean isWinner(String player) {
 	// TODO Auto-generated method stub
 	if(player=="player") {
@@ -117,6 +119,7 @@ public boolean isWinner(String player) {
 	}
 	return false;
 }
+//Will place the stone on the Board
 public void placeStone(int row,int col,String user) {
 	// TODO Auto-generated method stub
 	char symbol=' ';
@@ -128,6 +131,8 @@ public void placeStone(int row,int col,String user) {
 	board[row-1][col-1]=symbol;	
 	
 }
+//Checks if the stone landed in the coordinates listed on the board
+//if not they will be given one more opportunity as explained on GameController method
 	public boolean isValidPosition(int row,int col) {
 		 if(row<1||row>15) {
 			return false;

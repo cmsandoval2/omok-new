@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class ConsoleUI {
 	Scanner scnr=new Scanner(System.in);
 	GameController g=new GameController();
+	//Introduction to the game board and will call on GameController to continue the game forward
 public void intro() {
 	System.out.println("Welcome");
 	System.out.println("Choose game mode 1 for computer 2 for PVP, or 3 to quit game");
@@ -20,12 +21,6 @@ public void intro() {
 	default:
 			break;
 	}
-	//System.out.println("Choose Game mode 1 for computer game or 2 for PVP");
-	//System.out.println("Choose Row");
-	//int row=scnr.nextInt();
-	//System.out.println("Choose Column");
-	//int col=scnr.nextInt();
-	//System.out.println(row+" "+col);
 	
 }
 
