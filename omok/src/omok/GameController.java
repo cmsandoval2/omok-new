@@ -30,6 +30,10 @@ public class GameController {
 			else {
 			board.placeStone(row,col,"player");
 			}
+		//Checks if the game board is full
+		if(board.isDraw()) {
+			System.out.println("Game has ended in a draw");
+		}
 		//checks for winner on player1 side
 		
 		if(board.isWinner("player")) {
@@ -43,6 +47,11 @@ public class GameController {
 			int cpuRow=rand.nextInt(15)+1;
 			int cpuCol=rand.nextInt(15)+1;
 			board.placeStone(cpuRow, cpuCol, "cpu");
+			//Checks if the game board is full
+			if(board.isDraw()) {
+				System.out.println("Game has ended in a draw");
+			}
+			//Checks for winner
 		if(board.isWinner("cpu")) {
 			System.out.println("CPU has won");
 			board.displayboard();
@@ -75,6 +84,14 @@ public class GameController {
 			else {
 			board.placeStone(row,col,"player");
 			}
+			//Checks if the game board is full
+			if(board.isDraw()) {
+				System.out.println("Game has ended in a draw");
+			}
+			//Checks if the game board is full
+			if(board.isDraw()) {
+				System.out.println("Game has ended in a draw");
+			}
 			//Checks winner on Player 1 side
 			
 			if(board.isWinner("player")) {
@@ -103,6 +120,10 @@ public class GameController {
 				else {
 				board.placeStone(p2row,p2col,"player2");
 				}
+			//Checks if the game board is full
+			if(board.isDraw()) {
+				System.out.println("Game has ended in a draw");
+			}
 			//Checks winner on Player 2 side
 			
 			if(board.isWinner("player2")) {

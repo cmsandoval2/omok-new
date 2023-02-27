@@ -34,8 +34,8 @@ public void displayboard() {
 		System.out.println();
 	}
 }
-//Checks if the board is full might use
-public boolean isFull() {
+//Checks if the board is full, might use
+private boolean isFull() {
 	// TODO Auto-generated method stub
 	for(int i=0;i<board.length;i++) {
 		for(int j=0;j<board[i].length;j++) {
@@ -47,7 +47,7 @@ public boolean isFull() {
 	return true;
 }
 //Checks for the winner of the game will take either players of the game
-public boolean isWinner(String player) {
+protected boolean isWinner(String player) {
 	// TODO Auto-generated method stub
 	if(player=="player") {
 		//Horizontal
@@ -130,6 +130,12 @@ public void placeStone(int row,int col,String user) {
 	}
 	board[row-1][col-1]=symbol;	
 	
+}
+public boolean isDraw() {
+	if(isFull()) {
+		return true;
+	}
+	return false;
 }
 //Checks if the stone landed in the coordinates listed on the board
 //if not they will be given one more opportunity as explained on GameController method
