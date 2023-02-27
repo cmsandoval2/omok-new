@@ -141,6 +141,13 @@ public void placeStone(int row,int col,String user) {
 	board[row-1][col-1]=symbol;	
 	
 }
-	
+	public boolean isValidPosition(int row,int col) {
+		if(row<1||row>15) {
+			return false;
+		}else if(col<1||col>15) {
+			return false;
+		}
+		return true;
+	}
 }
 
