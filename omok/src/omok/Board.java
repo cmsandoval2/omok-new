@@ -64,21 +64,14 @@ public boolean isWinner(String player) {
 			}
 			}
 		}
-		for(int i=board.length-3; i>=0; i--) {
-		    for(int j=0; j<board[i].length-3; j++) {
-		        if(board[i][j]=='X'&&board[i+1][j+1]=='X'&&board[i+2][j+2]=='X'&&board[i+3][j+3]=='X'&&board[i+4][j+4]=='X') {
+		//Ascending diagonal
+		for (int i = 4; i < board.length; i++) {
+		    for (int j = 0; j < board[i].length-4; j++) {
+		        if (board[i][j] == 'X' && board[i-1][j+1] == 'X' && board[i-2][j+2] == 'X' && board[i-3][j+3] == 'X' && board[i-4][j+4] == 'X') {
 		            return true;
 		        }
 		    }
 		}
-		//Ascending diagonal
-		//for(int i=4;i<board.length;i++) {
-			//for(int j=4;j<board[i].length;j++) {
-				//if(board[i][j]=='X'&&board[i+1][j-1]=='X'&&board[i+2][j-2]=='X'&&board[i+3][j-3] =='X'&&board[i+4][j-4]=='X') {
-					//return true;
-		//}
-			//}
-		//}
 		//Descending diagonal
 		for(int i=4;i<board.length;i++) {
 			for(int j=4;j<board[i].length;j++) {
@@ -106,19 +99,13 @@ public boolean isWinner(String player) {
 				}
 			}
 			//Ascending diagonal
-			for(int i=board.length-5; i>=0; i--) {
-			    for(int j=0; j<board[i].length-4; j++) {
-			        if(board[i][j]=='X'&&board[i+1][j+1]=='X'&&board[i+2][j+2]=='X'&&board[i+3][j+3]=='X'&&board[i+4][j+4]=='X') {
+			for (int i = 4; i < board.length; i++) {
+			    for (int j = 0; j < board[i].length-4; j++) {
+			        if (board[i][j] == 'O' && board[i-1][j+1] == 'O' && board[i-2][j+2] == 'O' && board[i-3][j+3] == 'O' && board[i-4][j+4] == 'O') {
 			            return true;
 			        }
 			    }
 			}
-			//for(int i=3;i<board.length;i++) {
-				//for(int j=0;j<board[i].length-3;j++) {
-			 //if (board[i][j]=='O'&&board[i-1][j+1]=='O'&&board[i-2][j+2]=='O'&&board[i-3][j+3]=='O'&&board[i-4][j-4]=='O')
-	           //     return true;
-				//}
-			//}
 			//Descending diagonal
 			for(int i=4;i<board.length;i++) {
 				for(int j=4;j<board[i].length;j++) {
@@ -142,9 +129,9 @@ public void placeStone(int row,int col,String user) {
 	
 }
 	public boolean isValidPosition(int row,int col) {
-		if(row<1||row>15) {
+		 if(row<1||row>15) {
 			return false;
-		}else if(col<1||col>15) {
+		} if(col<1||col>15) {
 			return false;
 		}
 		return true;
